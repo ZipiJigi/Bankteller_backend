@@ -1,0 +1,50 @@
+{
+  "name": "bankteller-backend",
+  "version": "0.0.1",
+  "description": "Web API server of Bankteller application",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "mocha",
+    "clean": "rimraf ./dist",
+    "build": "tsc",
+    "start": "node ./dist",
+    "lint": "eslint --quiet --fix"
+  },
+  "_moduleAliases": {
+    "~": "./dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZipiJigi/Bankteller_backend.git"
+  },
+  "keywords": [
+    "money",
+    "bank",
+    "banking",
+    "korea"
+  ],
+  "author": "ZipiJigi",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/ZipiJigi/Bankteller_backend/issues"
+  },
+  "homepage": "https://github.com/ZipiJigi/Bankteller_backend#readme",
+  "devDependencies": {
+    "@types/chai": "^4.2.11",
+    "@types/mocha": "^8.0.0",
+    "@typescript-eslint/eslint-plugin": "^3.6.1",
+    "@typescript-eslint/parser": "^3.6.1",
+    "chai": "^4.2.0",
+    "eslint": "^7.4.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "mocha": "^8.0.1",
+    "prettier": "^2.0.5",
+    "rimraf": "^3.0.2",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.6"
+  },
+  "dependencies": {
+    "module-alias": "^2.2.2"
+  }
+}
