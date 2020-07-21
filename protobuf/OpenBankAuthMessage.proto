@@ -1,0 +1,10 @@
+message OpenBankAuthRequest {
+    enum AuthType {
+        UNLINK = 0;
+        LINK = 1;
+    }
+    AuthType type = 0;
+}
+message OpenBankAuthResponse {
+    string uri = 0;
+}

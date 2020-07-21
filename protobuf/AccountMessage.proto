@@ -1,0 +1,32 @@
+message AccountRegisterRequest {
+    string accountKey = 1;
+    string emailAddress = 2;
+}
+message AccountRegisterResponse {
+    enum AccountRegisterationStatus {
+        EMAIL_VALIDATION_REQUIRED = 0;
+        KEY_ALREADY_EXISTS = 1;
+        REGISTERED = 2;
+        MALFORMED_KEY = 3;
+        MALFORMED_EMAIL_ADDRESS = 4;
+        FAILED = 5;
+    }
+    bool registered = 1;
+    optional string emailValidationId = 2 [default = ""];
+}
+message AccountEmailRevalidationRequest {
+    string emailValidationId = 1;
+}
+message AccountEmailValidationRequest {
+    string emailValidationId = 1;
+    string emailValidationCode = 2;
+}
+message AccountEmailValidationResponse {
+    enum AccountEmailValidationResult {
+        FAILED = 0;
+        SUCCESS = 1;
+        RESENT = 2;
+    }
+    AccountEmailValidationResult result = 0;
+    optional string accountId = 1;
+}

@@ -1,0 +1,16 @@
+message LoginChallengeRequest {
+    string accountId = 0;
+}
+message LoginChallengeResponse {
+    string challenge = 0;
+}
+message LoginRequest {
+    string accountId = 0;
+    string challenged = 1;
+}
+message LoginResponse {
+    bool success = 0;
+    string token = 0;
+    string refreshToken = 1;
+    int64 tokenExpiresAt = 2;
+}
