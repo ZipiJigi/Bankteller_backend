@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package Bankteller;
+
+import "./PingMessage.proto";
+import "./ProgressMessage.proto";
+import "./OpenBankAuthMessage.proto";
+import "./AuthMessage.proto";
+import "./AccountMessage.proto";
+
+service BanktellerService {
+    // Ping-Pong (used to check version)
+    rpc Ping(PingRequest) returns (PongResponse);
+
+    // Terms Of Service
+    rpc TermsOfService(TermsOfServiceRequest) returns (TermsOfServiceResponse);
+
+    // Account registeration related
+    rpc Register(AccountRegisterRequest) returns (AccountRegisterResponse);
+    rpc ResendValidationEmail(ResendValidationEmailRequest) returns (ResendValidationEmailResponse);
+    rpc ValidateEmail(AccountEmailValidationRequest) returns (AccountEmailValidationResponse);
+
+    // Login
+    rpc Login(LoginRequest) returns (LoginResponse);
+    rpc FinishLogin(LoginFinishRequest) returns (LoginFinishResponse);
+
+    // Open Banking Linking related
+    rpc LinkOpenBanking(OpenBankAuthRequest) returns (OpenBankAuthResponse);
+
+    // Progress-related
+    rpc GetProgress(ProgressRequest) returns (ProgressResponse);
+}

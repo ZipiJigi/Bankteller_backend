@@ -1,0 +1,7 @@
+message PingRequest {
+    required string state = 0;
+}
+message PongResponse {
+    required string state = 0;
+    required int32 version = 1;
+}

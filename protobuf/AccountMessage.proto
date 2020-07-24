@@ -1,6 +1,23 @@
+message TermsOfService {
+    required int32 id = 0;
+    required string title = 1;
+    required string content = 2;
+    optional bool required = 3;
+}
+message TermsOfServiceRequest {
+    enum TermsOfServiceCategory {
+        REGISTERATION = 0;
+    }
+    repeated TermsOfServiceCategory categories = 0;
+    repeated int32 tosIds = 1;
+}
+message TermsOfServiceResponse {
+    repeated TermsOfService tos = 0;
+}
 message AccountRegisterRequest {
-    string accountKey = 1;
-    string emailAddress = 2;
+    required string accountKey = 0;
+    required string emailAddress = 1;
+    repeated int32 agreedTosIds = 2;
 }
 message AccountRegisterResponse {
     enum AccountRegisterationStatus {
@@ -9,24 +26,23 @@ message AccountRegisterResponse {
         REGISTERED = 2;
         MALFORMED_KEY = 3;
         MALFORMED_EMAIL_ADDRESS = 4;
-        FAILED = 5;
+        MUST_AGREE_TOS = 5;
+        FAILED = 6;
     }
-    bool registered = 1;
-    optional string emailValidationId = 2 [default = ""];
+    required bool registered = 0;
+    optional string emailValidationId = 1 [default = ""];
 }
-message AccountEmailRevalidationRequest {
-    string emailValidationId = 1;
+message ResendValidationEmailRequest {
+    required string emailValidationId = 0;
+}
+message ResendValidationEmailResponse {
+    required bool success = 0;
 }
 message AccountEmailValidationRequest {
-    string emailValidationId = 1;
-    string emailValidationCode = 2;
+    required string emailValidationId = 0;
+    required string emailValidationCode = 1;
 }
 message AccountEmailValidationResponse {
-    enum AccountEmailValidationResult {
-        FAILED = 0;
-        SUCCESS = 1;
-        RESENT = 2;
-    }
-    AccountEmailValidationResult result = 0;
+    required bool success = 0;
     optional string accountId = 1;
 }

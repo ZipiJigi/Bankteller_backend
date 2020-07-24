@@ -1,11 +1,11 @@
 message ProgressRequest {
-    string progressId = 0;
+    required string progressId = 0;
 }
 message ProgressResponse {
     enum ProgressStatusType {
         IN_PROGRESS = 0;
         DONE = 1;
     }
-    PRogressStatusType status = 0;
-    int32 percentage = 1;
+    required ProgressStatusType status = 0;
+    optional int32 percentage = 1;
 }

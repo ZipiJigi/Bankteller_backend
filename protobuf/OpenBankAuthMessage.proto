@@ -3,8 +3,10 @@ message OpenBankAuthRequest {
         UNLINK = 0;
         LINK = 1;
     }
-    AuthType type = 0;
+    required AuthType type = 0;
 }
 message OpenBankAuthResponse {
-    string uri = 0;
+    required bool webInteractionRequired = 0;
+    optional string uri = 1;
+    optional string progressId = 2;
 }
