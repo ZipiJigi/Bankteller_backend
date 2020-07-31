@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package Bankteller;
+
+import "../Message/PingMessage.proto";
+
+service PingService {
+    // Ping-Pong (used to check version)
+    rpc Ping(PingRequest) returns (PongResponse);
+}

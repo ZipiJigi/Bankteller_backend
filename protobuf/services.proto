@@ -1,0 +1,6 @@
+package Bankteller;
+
+import "./Service/AuthService.proto";
+import "./Service/MiscService.proto";
+import "./Service/PingService.proto";
+import "./Service/ProgressService.proto";

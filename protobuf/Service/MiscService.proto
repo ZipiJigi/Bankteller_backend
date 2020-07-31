@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package Bankteller;
+
+import "../Message/PingMessage.proto";
+import "../Message/ProgressMessage.proto";
+import "../Message/OpenBankAuthMessage.proto";
+import "../Message/AuthMessage.proto";
+import "../Message/AccountMessage.proto";
+
+service MiscService {
+    // Terms Of Service
+    rpc TermsOfService(TermsOfServiceRequest) returns (TermsOfServiceResponse);
+}
