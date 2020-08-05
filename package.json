@@ -47,7 +47,9 @@
   "dependencies": {
     "@grpc/grpc-js": "^1.1.2",
     "@grpc/proto-loader": "^0.5.5",
+    "@types/dotenv": "^8.2.0",
     "@types/uuid": "^8.0.0",
+    "dotenv": "^8.2.0",
     "module-alias": "^2.2.2",
     "mysql2": "^2.1.0",
     "sequelize-typescript": "^1.1.0",
