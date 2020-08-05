@@ -18,6 +18,9 @@ export class TermsOfService extends Model<TermsOfService> {
     @Column
     content!: string;
 
+    @Column
+    category!: string;
+
     @Default(false)
     @Column
     required!: boolean;

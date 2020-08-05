@@ -20,5 +20,4 @@ service AuthService {
 
     // Open Banking Linking related
     rpc LinkOpenBanking(OpenBankAuthRequest) returns (OpenBankAuthResponse);
-
 }
