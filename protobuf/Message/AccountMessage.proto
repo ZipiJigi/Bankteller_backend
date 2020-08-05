@@ -30,7 +30,8 @@ message AccountRegisterResponse {
         FAILED = 6;
     }
     required bool registered = 0;
-    optional string emailValidationId = 1 [default = ""];
+    required AccountRegisterationtatus status = 1;
+    optional string emailValidationId = 2 [default = ""];
 }
 message ResendValidationEmailRequest {
     required string emailValidationId = 0;
