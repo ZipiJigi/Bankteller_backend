@@ -2,6 +2,7 @@ import * as grpc from "@grpc/grpc-js";
 import * as grpcProtoLoader from "@grpc/proto-loader";
 import dotenv from "dotenv";
 import path from "path";
+import { initialize } from "./initDatabase";
 import * as PingService from "./services/Ping";
 
 const createServiceLoader = async (
@@ -23,6 +24,7 @@ const createServiceLoader = async (
 };
 export default async function (): Promise<BanktellerServer> {
     dotenv.config();
+    initialize();
     if (!process.env.BANKTELLER_GRPC_PORT)
         throw new Error("BANKTELLER_GRPC_PORT not defined");
     let port = Number(process.env.BANKTELLER_GRPC_PORT);
