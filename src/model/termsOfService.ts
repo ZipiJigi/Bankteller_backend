@@ -13,7 +13,7 @@ export class TermsOfService extends Model<TermsOfService> {
     id!: number;
 
     @Column
-    string!: string;
+    title!: string;
 
     @Column
     content!: string;
